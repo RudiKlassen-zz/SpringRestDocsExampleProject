@@ -1,0 +1,16 @@
+[cols="23%,10%,37%,20%"]
+|===
+|Feld|Typ|Beschreibung|Nebenbedingungen
+
+{{#fields}}
+|{{#tableCellContent}}`{{path}}`{{/tableCellContent}}
+|{{#tableCellContent}}`{{type}}`{{/tableCellContent}}
+|{{#tableCellContent}}{{description}}{{/tableCellContent}}
+ifeval::["{{mustBeNull}}" == "true"]
+ |Muss `null` oder nicht existent sein
+endif::[]
+ifeval::["{{mustBeNull}}" != "true"]
+ |{{#tableCellContent}}{{constraints}}{{/tableCellContent}}
+endif::[]
+{{/fields}}
+|===
